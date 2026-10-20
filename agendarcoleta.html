@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pessoa: Agendar Coleta - Ecomap</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <a href="home.html" class="logo-container">
+            <div class="logo-icone">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+            </div>
+            <span class="logo-texto">Eco<span>map</span></span>
+        </a>
+
+        <nav>
+            <a href="home.html">Início</a>
+            <a href="mapaecopontos.html">Ache um EcoPonto</a>
+            <a href="agendarcoleta.html" class="active">Agendar Coleta</a>
+            <a href="cadastrarecopontos.html">Cadastrar EcoPonto</a>
+            <a href="loginecoponto.html" class="nav-parceiro">Área do EcoPonto</a>
+            <a href="login.html" class="nav-perfil">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icone-usuario">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <div class="texto-perfil">
+                    <span>Login Cidadão</span>
+                </div>
+            </a>
+        </nav>
+    </header>
+
+    <section id="registro-descarte">
+        <h2>Pessoa: Agendar Coleta em Domicílio</h2>
+        <p>Agende uma recolha na sua residência ou empresa em Viamão e Região Metropolitana.</p>
+
+        <form style="width: 100%;">
+            <div class="grupo-campo">
+                <label for="nome-solicitante">Nome Completo:</label>
+                <input type="text" id="nome-solicitante" placeholder="Digite seu nome completo" required>
+            </div>
+
+            <div class="grupo-campo-duplo">
+                <div class="grupo-campo">
+                    <label for="telefone-solicitante">Telefone / WhatsApp:</label>
+                    <input type="tel" id="telefone-solicitante" placeholder="(51) 99999-9999" required>
+                </div>
+                <div class="grupo-campo">
+                    <label for="email-solicitante">E-mail de Contato:</label>
+                    <input type="email" id="email-solicitante" placeholder="seuemail@exemplo.com" required>
+                </div>
+            </div>
+
+            <div class="grupo-campo">
+                <label for="ecoponto-destino">EcoPonto Responsável:</label>
+                <select id="ecoponto-destino" required>
+                    <option value="" disabled selected>Selecione o EcoPonto mais próximo</option>
+                    <option value="ecoponto_santa_isabel">EcoPonto Santa Isabel (Viamão)</option>
+                    <option value="ecoponto_centro_viamao">EcoPonto Centro (Viamão)</option>
+                </select>
+            </div>
+
+            <div class="grupo-campo-duplo">
+                <div class="grupo-campo">
+                    <label for="data-coleta">Data Desejada:</label>
+                    <input type="date" id="data-coleta" required>
+                </div>
+                <div class="grupo-campo">
+                    <label for="turno-coleta">Turno Preferencial:</label>
+                    <select id="turno-coleta" required>
+                        <option value="manha">Manhã (08h às 12h)</option>
+                        <option value="tarde">Tarde (13h às 17h)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grupo-campo-duplo">
+                <div class="grupo-campo">
+                    <label for="cep-coleta">CEP:</label>
+                    <input type="text" id="cep-coleta" placeholder="94400-000">
+                </div>
+                <div class="grupo-campo">
+                    <label for="tipo-imovel">Tipo de Imóvel:</label>
+                    <select id="tipo-imovel">
+                        <option value="casa">Casa</option>
+                        <option value="apartamento">Apartamento / Condomínio</option>
+                        <option value="comercio">Comércio / Empresa</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grupo-campo">
+                <label for="endereco-coleta">Endereço Completo:</label>
+                <input type="text" id="endereco-coleta" placeholder="Rua, Número, Bairro" required>
+            </div>
+
+            <div class="grupo-campo">
+                <label for="complemento-coleta">Complemento / Ponto de Referência:</label>
+                <input type="text" id="complemento-coleta" placeholder="Apto, Bloco, Próximo ao mercado X, etc.">
+            </div>
+
+            <div class="grupo-campo">
+                <label>Tipos de Resíduos para Coleta:</label>
+                <div class="checkbox-cadastro-grid">
+                    <label><input type="checkbox" name="tipo_residuo" value="eletronicos"> Eletrônicos / Eletrodomésticos</label>
+                    <label><input type="checkbox" name="tipo_residuo" value="moveis"> Móveis e Volumosos</label>
+                    <label><input type="checkbox" name="tipo_residuo" value="oleo"> Óleo de Cozinha Usado</label>
+                    <label><input type="checkbox" name="tipo_residuo" value="reciclaveis"> Recicláveis em Grande Quantidade (Plástico, Papel, Metal, Vidro)</label>
+                    <label><input type="checkbox" name="tipo_residuo" value="poda"> Restos de Poda / Jardinagem</label>
+                </div>
+            </div>
+
+            <div class="grupo-campo">
+                <label for="quantidade-residuos">Quantidade / Volume Estimado:</label>
+                <input type="text" id="quantidade-residuos" placeholder="Ex: 3 sacos grandes, 1 geladeira, 20L de óleo" required>
+            </div>
+
+            <div class="grupo-campo">
+                <label for="observacoes-coleta">Observações ou Instruções de Acesso:</label>
+                <textarea id="observacoes-coleta" rows="4" placeholder="Informe detalhes adicionais, se o material já está embalado, horários de preferência ou instruções para a equipe ao chegar."></textarea>
+            </div>
+
+            <button type="submit" class="btn-registro">Enviar Solicitação de Agendamento</button>
+        </form>
+    </section>
+
+    <footer>
+        <h4>Entre em contato comigo!</h4>
+        <p>luizafraga23@gmail.com - Desenvolvedora do site</p>
+        <p>&copy; 2026 Ecomap - Ecopontos (Viamão e Região Metropolitana) - Projeto Integrador Front-End.</p>
+    </footer>
+
+    <script src="../Controller/agendarcoleta.js"></script>
+</body>
+
+</html>
+

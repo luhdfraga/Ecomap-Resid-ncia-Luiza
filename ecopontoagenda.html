@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do EcoPonto: Gerenciar Agenda - Ecomap</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <a href="home.html" class="logo-container">
+            <div class="logo-icone">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+            </div>
+            <span class="logo-texto">Eco<span>map</span></span>
+        </a>
+
+        <nav>
+            <a href="home.html">Início</a>
+            <a href="mapaecopontos.html">Ache um EcoPonto</a>
+            <a href="agendarcoleta.html">Agendar Coleta</a>
+            <a href="cadastrarecopontos.html">Cadastrar EcoPonto</a>
+            <a href="loginecoponto.html" class="nav-parceiro active">Área do EcoPonto</a>
+            <a href="home.html" class="nav-perfil" style="background-color: var(--vermelho-alerta);">
+                <div class="texto-perfil">
+                    <span>Sair do Painel</span>
+                </div>
+            </a>
+        </nav>
+    </header>
+
+    <div id="painel-usuario">
+        <h2>Gerenciar Agenda de Coletas em Domicílio</h2>
+        <p style="margin-bottom: 25px; color: var(--texto-suave);">Gerencie os dados da sua unidade, defina regras de coleta e acompanhe as solicitações agendadas pelos cidadãos.</p>
+
+        <div class="secao-form">
+            <legend>📍 Dados Cadastrais e de Contato do EcoPonto</legend>
+            <form style="margin-top: 15px;">
+                <div class="grupo-campo-duplo">
+                    <div class="grupo-campo">
+                        <label for="nome-ecoponto">Nome da Unidade / EcoPonto:</label>
+                        <input type="text" id="nome-ecoponto" value="EcoPonto Santa Isabel (Viamão)">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="responsavel-ecoponto">Responsável Técnico / Contato:</label>
+                        <input type="text" id="responsavel-ecoponto" value="João Silva">
+                    </div>
+                </div>
+
+                <div class="grupo-campo-duplo">
+                    <div class="grupo-campo">
+                        <label for="telefone-ecoponto">Telefone / WhatsApp Comercial:</label>
+                        <input type="tel" id="telefone-ecoponto" value="(51) 98765-4321">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="email-ecoponto">E-mail Institucional:</label>
+                        <input type="email" id="email-ecoponto" value="santaisabel@ecomap.org">
+                    </div>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="endereco-ecoponto">Endereço da Sede:</label>
+                    <input type="text" id="endereco-ecoponto" value="Av. Liberdade, 1234 - Santa Isabel, Viamão - RS">
+                </div>
+
+                <button type="button" class="btn-comunidade" style="width: auto; padding: 10px 20px;">Salvar Dados do Perfil</button>
+            </form>
+        </div>
+
+        <div class="secao-form">
+            <legend>⚙️ 1. Configurar Disponibilidade e Regras de Coleta</legend>
+            <form style="margin-top: 15px;">
+                <div class="grupo-campo-duplo">
+                    <div class="grupo-campo">
+                        <label for="horario-inicio">Horário Inicial:</label>
+                        <input type="time" id="horario-inicio" value="08:00">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="horario-limite">Horário Limite:</label>
+                        <input type="time" id="horario-limite" value="17:00">
+                    </div>
+                </div>
+
+                    <div class="grupo-campo">
+                        <label for="bairros-atendidos">Bairros Atendidos na Região:</label>
+                        <input type="text" id="bairros-atendidos" value="Santa Isabel, Centro, Cecilia, Viamópolis">
+                    </div>
+                </div>
+
+                <div class="grupo-campo">
+                    <label>Dias Semanais com Coleta Domiciliar Ativa:</label>
+                    <div class="checkbox-cadastro-grid">
+                        <label><input type="checkbox" name="dias_coleta" checked> Segunda-feira</label>
+                        <label><input type="checkbox" name="dias_coleta" checked> Terça-feira</label>
+                        <label><input type="checkbox" name="dias_coleta" checked> Quarta-feira</label>
+                        <label><input type="checkbox" name="dias_coleta" checked> Quinta-feira</label>
+                        <label><input type="checkbox" name="dias_coleta" checked> Sexta-feira</label>
+                        <label><input type="checkbox" name="dias_coleta"> Sábado</label>
+                    </div>
+                </div>
+
+                <button type="button" class="btn-comunidade" style="width: auto; padding: 10px 20px;">Atualizar Regras da Agenda</button>
+            </form>
+        </div>
+
+        <div class="secao-form">
+            <legend>📅 2. Solicitações de Coleta Agendadas</legend>
+            <p style="font-size: 0.9rem; color: var(--texto-suave); margin-bottom: 15px;">Acompanhe os pedidos de recolha solicitados pela comunidade no seu EcoPonto.</p>
+
+            <div class="tabela-responsiva">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data / Turno</th>
+                            <th>Cidadão / Contato</th>
+                            <th>Endereço</th>
+                            <th>Resíduos / Volume</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>28/09 - 10:30 (Manhã)</td>
+                            <td>Maria Eduarda<br><small>(51) 99123-4567</small></td>
+                            <td>Bairro Cecília (Viamão)</td>
+                            <td>💻 Eletrônicos (1 TV, 1 PC)</td>
+                            <td><span class="status-tag aprovado">Confirmado</span></td>
+                            <td>
+                                <button type="button" style="padding: 4px 8px; font-size: 0.8rem; cursor: pointer; border-radius: 4px; border: 1px solid var(--borda-padrao);">Ver Detalhes</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>29/09 - 14:00 (Tarde)</td>
+                            <td>Carlos Alberto<br><small>(51) 98888-5555</small></td>
+                            <td>Santa Isabel (Viamão)</td>
+                            <td>🛢️ Óleo de Cozinha (20L)</td>
+                            <td><span class="status-tag" style="background-color: #fef3c7; color: #d97706; padding: 3px 8px; border-radius: 4px; font-weight: 600;">Pendente</span></td>
+                            <td>
+                                <button type="button" style="padding: 4px 8px; font-size: 0.8rem; cursor: pointer; border-radius: 4px; background-color: var(--verde-primario); color: white; border: none;">Aprovar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>30/09 - 09:00 (Manhã)</td>
+                            <td>Luciana Lima<br><small>(51) 97777-1234</small></td>
+                            <td>Centro (Viamão)</td>
+                            <td>🛋️ Móveis / Volumosos</td>
+                            <td><span class="status-tag aprovado">Concluído</span></td>
+                            <td>
+                                <button type="button" style="padding: 4px 8px; font-size: 0.8rem; cursor: pointer; border-radius: 4px; border: 1px solid var(--borda-padrao);">Histórico</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h4>Entre em contato comigo!</h4>
+        <p>luizafraga23@gmail.com - Desenvolvedora do site</p>
+        <p>&copy; 2026 Ecomap - Ecopontos (Viamão e Região Metropolitana) - Projeto Integrador Front-End.</p>
+    </footer>
+
+    <script src="../Controller/Ecoponto.js"></script>
+</body>
+
+</html>
+

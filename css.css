@@ -1,0 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;600;700&display=swap');
+
+/* ==========================================================================
+   1. VARIÁVEIS GLOBAIS E RESET
+   ========================================================================== */
+:root {
+    --verde-escuro: #1e5f38;
+    --verde-primario: #2d8a4e;
+    --verde-profundo: #112d1b;
+    --amarelo-destaque: #ffb834;
+    --amarelo-hover: #ffa807;
+    --vermelho-alerta: #991b1b;
+
+    --bg-body: #f8faf9;
+    --bg-card: #ffffff;
+    --bg-suave: #f1f5f3;
+    --texto-principal: #2c3e50;
+    --texto-suave: #555555;
+    --borda-padrao: #e1e8e4;
+
+    --fonte-principal: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte-principal);
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--texto-principal);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO HARMONIZADO E ALINHADO (HEADER)
+   ========================================================================== */
+header {
+    width: 100%;
+    max-width: 1280px;
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid var(--borda-padrao);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo-icone {
+    width: 38px;
+    height: 38px;
+    background-color: var(--verde-escuro);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--amarelo-destaque);
+}
+
+.logo-icone svg {
+    width: 22px;
+    height: 22px;
+}
+
+.logo-texto {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--verde-escuro);
+    letter-spacing: -0.5px;
+}
+
+.logo-texto span {
+    color: var(--verde-primario);
+    font-weight: 400;
+}
+
+header nav {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--texto-suave);
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+header nav a:hover,
+header nav a.active {
+    color: var(--verde-escuro);
+    background-color: #eaf3ed;
+}
+
+header nav .nav-parceiro {
+    border: 1px solid var(--verde-primario);
+    color: var(--verde-escuro);
+}
+
+header nav .nav-parceiro:hover,
+header nav .nav-parceiro.active {
+    background-color: var(--verde-escuro);
+    color: #ffffff;
+}
+
+header nav .nav-perfil {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--verde-primario);
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 8px 14px;
+}
+
+header nav .nav-perfil:hover {
+    background-color: var(--verde-profundo);
+}
+
+header nav .nav-perfil .icone-usuario {
+    width: 18px;
+    height: 18px;
+    stroke: var(--amarelo-destaque);
+}
+
+header nav .nav-perfil .texto-perfil span {
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   3. ESTRUTURA PRINCIPAL E COMPONENTES
+   ========================================================================== */
+.hero {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto 10px auto;
+    background: linear-gradient(135deg, var(--verde-escuro), var(--verde-primario));
+    color: #ffffff;
+    padding: 60px 40px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(30, 95, 56, 0.15);
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    max-width: 900px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.05rem;
+    max-width: 780px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.btn-principal {
+    display: inline-block;
+    background-color: var(--amarelo-destaque);
+    color: var(--verde-profundo);
+    text-decoration: none;
+    padding: 12px 28px;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+}
+
+.btn-principal:hover {
+    background-color: var(--amarelo-hover);
+    transform: translateY(-2px);
+}
+
+section {
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    color: var(--verde-escuro);
+    margin-bottom: 20px;
+}
+
+.grid-dados, .grid-vantagens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.card-dado, .card-vantagem {
+    background: #ffffff;
+    border: 1px solid var(--borda-padrao);
+    border-radius: 14px;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.card-dado h3, .card-vantagem h3 {
+    color: var(--verde-escuro);
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+/* FORMULÁRIOS E PAINÉIS */
+#cadastro-comunidade,
+#cadastro-ecoponto,
+#registro-descarte,
+#form-login-bloco {
+    width: 100%;
+    max-width: 780px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 35px 30px;
+    text-align: center;
+    border-top: 5px solid var(--verde-primario);
+}
+
+#registro-descarte {
+    border-top-color: var(--amarelo-destaque);
+}
+
+#painel-usuario {
+    width: 100%;
+    max-width: 920px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    padding: 30px;
+}
+
+/* FIELDSET E SEÇÕES DE FORMULÁRIO */
+.secao-form {
+    border: 1px solid var(--borda-padrao);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.secao-form legend {
+    font-weight: 700;
+    color: var(--verde-escuro);
+    padding: 0 10px;
+    font-size: 1.05rem;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.grupo-campo label {
+    color: var(--verde-escuro);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+.grupo-campo input, .grupo-campo select, .grupo-campo textarea {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    border: 1px solid var(--borda-padrao);
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.grupo-campo-duplo, .grupo-campo-triplo {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+/* ESTILIZAÇÃO E ALINHAMENTO DAS CHECKBOXES */
+.checkbox-cadastro-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.checkbox-cadastro-grid label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: var(--texto-principal);
+    cursor: pointer;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.checkbox-cadastro-grid input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--verde-primario);
+    cursor: pointer;
+    margin: 0;
+}
+
+.btn-comunidade, .btn-cadastro {
+    background-color: var(--verde-primario);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-registro {
+    background-color: var(--amarelo-destaque);
+    color: var(--verde-profundo);
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* MAPA PLACEHOLDER */
+.container-mapa {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.barra-lateral {
+    flex: 1;
+    max-width: 350px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--borda-padrao);
+    text-align: left;
+}
+
+.mapa-placeholder {
+    flex: 2;
+    height: 520px;
+    border-radius: 12px;
+    border: 1px solid var(--borda-padrao);
+    background-color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-weight: bold;
+}
+
+/* TABELAS */
+.historico-descartes {
+    width: 100%;
+    text-align: left;
+}
+
+.tabela-responsiva {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+th {
+    background-color: var(--bg-body);
+    color: var(--verde-escuro);
+    padding: 12px;
+    font-weight: 600;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #eef2f0;
+    color: #444444;
+}
+
+.status-tag.aprovado {
+    background-color: #eaf6ee;
+    color: var(--verde-primario);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* BANNER CTA E FOOTER */
+.banner-comunidade-chamada {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background: linear-gradient(135deg, var(--verde-profundo), var(--verde-escuro));
+    border-radius: 16px;
+    padding: 35px 40px;
+    color: #ffffff;
+}
+
+.conteudo-chamada {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%; 
+}
+
+.banner-comunidade-chamada h2 {
+    color: #ffffff !important;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.btn-comunidade-cta {
+    background-color: var(--amarelo-destaque);
+    color: var(--verde-profundo);
+    text-decoration: none;
+    padding: 12px 24px;
+    font-weight: 700;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+footer {
+    width: 100%;
+    background-color: var(--verde-profundo);
+    color: #e2f0e7;
+    padding: 35px 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer h4 { color: var(--amarelo-destaque); margin-bottom: 5px; }
+footer p { font-size: 0.85rem; opacity: 0.85; }
+
+/* RESPONSIVIDADE */
+@media (max-width: 992px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+    header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .container-mapa, .conteudo-chamada {
+        flex-direction: column;
+    }
+    .barra-lateral { max-width: 100%; }
+    .grupo-campo-duplo, .grupo-campo-triplo {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+

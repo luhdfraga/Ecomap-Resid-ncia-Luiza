@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar EcoPonto - Ecomap</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <a href="home.html" class="logo-container">
+            <div class="logo-icone">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+            </div>
+            <span class="logo-texto">Eco<span>map</span></span>
+        </a>
+
+        <nav>
+            <a href="home.html">Início</a>
+            <a href="mapaecopontos.html">Ache um EcoPonto</a>
+            <a href="agendarcoleta.html">Agendar Coleta</a>
+            <a href="cadastrarecopontos.html" class="active">Cadastrar EcoPonto</a>
+            <a href="loginecoponto.html" class="nav-parceiro">Área do EcoPonto</a>
+            <a href="login.html" class="nav-perfil">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icone-usuario">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <div class="texto-perfil">
+                    <span>Login Cidadão</span>
+                </div>
+            </a>
+        </nav>
+    </header>
+
+    <section id="cadastro-ecoponto">
+        <h2>Cadastrar Novo EcoPonto</h2>
+        <form style="width: 100%;">
+            
+            <fieldset class="secao-form">
+                <legend>1. Identificação e Responsável</legend>
+
+                <div class="grupo-campo">
+                    <label for="nome-ponto">Nome do EcoPonto / Entidade:</label>
+                    <input type="text" id="nome-ponto" placeholder="Ex: EcoPonto Cecília - Viamão" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="tipo-gestao">Tipo de Gestão / Entidade:</label>
+                    <select id="tipo-gestao" required>
+                        <option value="">Selecione...</option>
+                        <option value="publico">Público / Municipal</option>
+                        <option value="cooperativa">Cooperativa / Associação de Catadores</option>
+                        <option value="privada">Empresa Privada</option>
+                        <option value="comunitario">Ponto Voluntário / Comunitário</option>
+                    </select>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="cnpj">CNPJ ou Registro Legal (opcional):</label>
+                    <input type="text" id="cnpj" placeholder="00.000.000/0001-00">
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="nome-responsavel">Nome do Responsável pelo Ponto:</label>
+                    <input type="text" id="nome-responsavel" placeholder="Nome completo do responsável" required>
+                </div>
+            </fieldset>
+
+            <fieldset class="secao-form">
+                <legend>2. Localização</legend>
+
+                <div class="grupo-campo">
+                    <label for="cidade-ponto">Município:</label>
+                    <select id="cidade-ponto" required>
+                        <option value="viamao">Viamão</option>
+                        <option value="porto_alegre">Porto Alegre</option>
+                        <option value="alvorada">Alvorada</option>
+                        <option value="gravatai">Gravataí</option>
+                        <option value="canoas">Canoas</option>
+                    </select>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="cep-ponto">CEP:</label>
+                    <input type="text" id="cep-ponto" placeholder="94400-000">
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="endereco-ponto">Endereço Completo:</label>
+                    <input type="text" id="endereco-ponto" placeholder="Rua, Número e Bairro" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="ponto-referencia">Ponto de Referência:</label>
+                    <input type="text" id="ponto-referencia" placeholder="Ex: Próximo à praça central, em frente à escola...">
+                </div>
+
+                <div class="grupo-campo">
+                    <label>Coordenadas para o Mapa (Opcional):</label>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" id="latitude" placeholder="Latitude (ex: -30.0811)">
+                        <input type="text" id="longitude" placeholder="Longitude (ex: -51.0233)">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="secao-form">
+                <legend>3. Contato e Comunicação</legend>
+
+                <div class="grupo-campo">
+                    <label for="telefone-ponto">Telefone / WhatsApp de Contato:</label>
+                    <input type="tel" id="telefone-ponto" placeholder="(51) 99999-9999" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="email-ponto">E-mail para Validação e Contato:</label>
+                    <input type="email" id="email-ponto" placeholder="contato@ecoponto.com.br" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="redes-sociais">Redes Sociais / Website (opcional):</label>
+                    <input type="url" id="redes-sociais" placeholder="https://instagram.com/seu_ecoponto">
+                </div>
+            </fieldset>
+
+            <fieldset class="secao-form">
+                <legend>4. Horários e Regras de Entrega</legend>
+
+                <div class="grupo-campo">
+                    <label for="dias-funcionamento">Dias de Funcionamento:</label>
+                    <input type="text" id="dias-funcionamento" placeholder="Ex: Segunda a Sexta-feira" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="horario-atendimento">Horário de Atendimento:</label>
+                    <input type="text" id="horario-atendimento" placeholder="Ex: 08:00 às 17:00" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label>Modalidade de Recebimento:</label>
+                    <div class="checkbox-cadastro-grid">
+                        <label><input type="checkbox" name="modalidade" value="voluntaria"> Entrega Voluntária (Sem agendamento)</label>
+                        <label><input type="checkbox" name="modalidade" value="agendada"> Necessita Agendamento Prévio</label>
+                        <label><input type="checkbox" name="modalidade" value="coleta"> Possui Busca/Coleta em Domicílio</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="secao-form">
+                <legend>5. Tipos de Resíduos Aceitos</legend>
+                <div class="grupo-campo">
+                    <label>Selecione todas as categorias aceitas no local:</label>
+                    <div class="checkbox-cadastro-grid">
+                        <label><input type="checkbox" name="residuos" value="papel"> 📦 Papel e Papelão</label>
+                        <label><input type="checkbox" name="residuos" value="plastico"> 🥤 Plásticos (PET e Embalagens)</label>
+                        <label><input type="checkbox" name="residuos" value="vidro"> 🍾 Vidros</label>
+                        <label><input type="checkbox" name="residuos" value="metal"> 🥫 Metais e Latas</label>
+                        <label><input type="checkbox" name="residuos" value="eletronicos"> 💻 Eletrônicos (e-Lixo)</label>
+                        <label><input type="checkbox" name="residuos" value="oleo"> 🛢️ Óleo de Cozinha Usado</label>
+                        <label><input type="checkbox" name="residuos" value="pilhas"> 🔋 Pilhas e Baterias</label>
+                        <label><input type="checkbox" name="residuos" value="lampadas"> 💡 Lâmpadas Fluorescentes</label>
+                        <label><input type="checkbox" name="residuos" value="entulho"> 🧱 Entulhos e Sobras de Obra</label>
+                        <label><input type="checkbox" name="residuos" value="moveis"> 🛋️ Móveis e Volumosos</label>
+                        <label><input type="checkbox" name="residuos" value="poda"> 🌿 Restos de Poda e Jardinagem</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="secao-form">
+                <legend>6. Detalhes Adicionais e Foto</legend>
+
+                <div class="grupo-campo">
+                    <label for="limite-volume">Limite de Volume por Entrega (se houver):</label>
+                    <input type="text" id="limite-volume" placeholder="Ex: Máximo de 1 m³ por pessoa/dia">
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="instrucoes-descarte">Instruções para o Descarte:</label>
+                    <textarea id="instrucoes-descarte" rows="3" placeholder="Ex: Entregar garrafas lavadas, óleo em garrafa PET transparente, etc."></textarea>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="foto-ecoponto">Foto da Fachada / Local (opcional):</label>
+                    <input type="file" id="foto-ecoponto" accept="image/*">
+                </div>
+            </fieldset>
+
+            <button type="submit" class="btn-cadastro">Solicitar Cadastro de EcoPonto</button>
+        </form>
+    </section>
+
+    <footer>
+        <h4>Entre em contato comigo!</h4>
+        <p>luizafraga23@gmail.com - Desenvolvedora do site</p>
+        <p>&copy; 2026 Ecomap - Ecopontos (Viamão e Região Metropolitana) - Projeto Integrador Front-End.</p>
+    </footer>
+
+    <script src="../Controller/cadastrarecopontos.js"></script>
+</body>
+
+</html>
+

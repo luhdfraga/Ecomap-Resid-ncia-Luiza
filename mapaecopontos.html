@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ache um EcoPonto - Ecomap</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <a href="home.html" class="logo-container">
+            <div class="logo-icone">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+            </div>
+            <span class="logo-texto">Eco<span>map</span></span>
+        </a>
+
+        <nav>
+            <a href="home.html">Início</a>
+            <a href="mapaecopontos.html" class="active">Ache um EcoPonto</a>
+            <a href="agendarcoleta.html">Agendar Coleta</a>
+            <a href="cadastrarecopontos.html">Cadastrar EcoPonto</a>
+            <a href="loginecoponto.html" class="nav-parceiro">Área do EcoPonto</a>
+            <a href="login.html" class="nav-perfil">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icone-usuario">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <div class="texto-perfil">
+                    <span>Login Cidadão</span>
+                </div>
+            </a>
+        </nav>
+    </header>
+
+    <main class="container-mapa">
+        <section class="barra-lateral">
+            <h2>EcoPontos na Região</h2>
+            <p>Encontre os pontos de entrega voluntária de resíduos mais próximos de você em Viamão e Região Metropolitana.</p>
+
+            <div class="grupo-campo" style="margin-top: 15px;">
+                <label for="filtro-cidade">Selecione o Município:</label>
+                <select id="filtro-cidade">
+                    <option value="" disabled selected>Escolha o município...</option>
+                    <option value="viamao">Viamão</option>
+                    <option value="porto_alegre">Porto Alegre</option>
+                    <option value="alvorada">Alvorada</option>
+                    <option value="canoas">Canoas</option>
+                </select>
+            </div>
+        </section>
+
+        <div class="mapa-placeholder">
+            📍 Visualização do Mapa Interativo de EcoPontos
+        </div>
+    </main>
+
+    <footer>
+        <h4>Entre em contato comigo!</h4>
+        <p>luizafraga23@gmail.com - Desenvolvedora do site</p>
+        <p>&copy; 2026 Ecomap - Ecopontos (Viamão e Região Metropolitana) - Projeto Integrador Front-End.</p>
+    </footer>
+
+    <script src="../Controller/mapaecopontos.js"></script>
+</body>
+
+</html>
+

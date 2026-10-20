@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - Ecomap</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <a href="home.html" class="logo-container">
+            <div class="logo-icone">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+            </div>
+            <span class="logo-texto">Eco<span>map</span></span>
+        </a>
+
+        <nav>
+            <a href="home.html">Início</a>
+            <a href="mapaecopontos.html">Ache um EcoPonto</a>
+            <a href="agendarcoleta.html">Agendar Coleta</a>
+            <a href="cadastrarecopontos.html">Cadastrar EcoPonto</a>
+            <a href="loginecoponto.html" class="nav-parceiro">Área do EcoPonto</a>
+            <a href="perfil.html" class="nav-perfil active">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icone-usuario">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <div class="texto-perfil">
+                    <span>Meu Perfil</span>
+                </div>
+            </a>
+        </nav>
+    </header>
+
+    <main id="painel-usuario">
+        <div class="card-perfil-topo">
+            <div class="dados-perfil-topo">
+                <h2>Luiza Fraga</h2>
+                <p>@luiza_viamao</p>
+                <p>📍 Viamão, RS (Região Metropolitana)</p>
+            </div>
+
+            <div class="badge-nivel ouro">
+                <span>🥉 Nível Bronze (120 pts)</span>
+            </div>
+        </div>
+
+        <div class="grid-dados" style="margin-bottom: 30px;">
+            <div class="card-dado">
+                <h3>5 🛢️</h3>
+                <p>Descartes Efetuados</p>
+            </div>
+
+            <div class="card-dado">
+                <h3>2 🚚</h3>
+                <p>Coletas Agendadas</p>
+            </div>
+        </div>
+
+        <div class="historico-descartes">
+            <h3>📋 Histórico de Descartes Efetuados e Coletas</h3>
+            <div class="tabela-responsiva">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>EcoPonto / Local</th>
+                            <th>Material</th>
+                            <th>Pontos</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>20/09/2026</td>
+                            <td>EcoPonto Santa Isabel</td>
+                            <td>🛢️ Óleo de Cozinha</td>
+                            <td>+30 pts</td>
+                            <td><span class="status-tag aprovado">Confirmado</span></td>
+                        </tr>
+                        <tr>
+                            <td>15/09/2026</td>
+                            <td>Recolha ao Domicílio</td>
+                            <td>💻 Eletrónicos</td>
+                            <td>+50 pts</td>
+                            <td><span class="status-tag aprovado">Concluído</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; display: flex; gap: 15px; width: 100%; justify-content: center;">
+            <a href="agendarcoleta.html" class="btn-registro" style="max-width: 220px; text-decoration: none; text-align: center;">Agendar Nova Coleta</a>
+            <a href="home.html" class="btn-registro" style="max-width: 180px; background-color: #991b1b; color: white; text-decoration: none; text-align: center;">Sair da Conta</a>
+        </div>
+
+        <section id="registro-descarte">
+        <h2>Anotações: Registre aqui seus descartes efetuados</h2>
+        <form id="form-descarte" style="width: 100%;">
+            <div class="grupo-campo">
+                <label for="ponto-visitado">EcoPonto Visitado:</label>
+                <input type="text" id="ponto-visitado" placeholder="Ex: EcoPonto Santa Isabel - Viamão">
+            </div>
+
+            <div class="grupo-campo-duplo">
+                <div class="grupo-campo">
+                    <label for="tipo-descarte">Material Descartado:</label>
+                    <select id="tipo-descarte">
+                        <option value="plastico">🥤 Plástico</option>
+                        <option value="papel">📦 Papel/Papelão</option>
+                        <option value="eletronicos">💻 Eletrônicos</option>
+                    </select>
+                </div>
+                <div class="grupo-campo">
+                    <label for="quantidade-descarte">Quantidade:</label>
+                    <input type="text" id="quantidade-descarte" placeholder="Ex: 3 kg">
+                </div>
+            </div>
+
+            <button type="button" class="btn-registro">Confirmar e Registrar Descarte</button>
+        </form>
+    </section>
+
+
+    </main>
+
+    <footer>
+        <h4>Entre em contato comigo!</h4>
+        <p>luizafraga23@gmail.com - Desenvolvedora do site</p>
+        <p>&copy; 2026 Ecomap - Ecopontos (Viamão e Região Metropolitana) - Front-End.</p>
+    </footer>
+
+    <script src="../Controller/perfil.js"></script>
+</body>
+
+</html>
+

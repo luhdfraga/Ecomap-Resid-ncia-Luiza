@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do EcoPonto - Ecomap</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <a href="home.html" class="logo-container">
+            <div class="logo-icone">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+            </div>
+            <span class="logo-texto">Eco<span>map</span></span>
+        </a>
+
+        <nav>
+            <a href="areaecoponto.html" class="active">Área do EcoPonto</a>
+            <a href="ecopontoagenda.html">Gerenciar Agenda</a>
+            <a href="home.html" style="color: var(--vermelho-alerta); font-weight: 600;">Sair do Painel</a>
+        </nav>
+    </header>
+
+    <main id="painel-usuario">
+        <!-- CABEÇALHO DO PAINEL -->
+        <div class="card-perfil-topo" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 2px solid var(--borda-padrao); padding-bottom: 15px;">
+            <div style="text-align: left;">
+                <h2 style="color: var(--verde-escuro); margin-bottom: 4px;">EcoPonto Santa Isabel - Viamão</h2>
+                <p style="color: var(--texto-suave); font-size: 0.95rem;">📍 Santa Isabel, Viamão - RS | Unidade Operacional Credenciada</p>
+            </div>
+            <div class="badge-nivel ouro" style="background-color: #eaf6ee; color: var(--verde-primario); padding: 8px 16px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; border: 1px solid var(--verde-primario);">
+                <span>🏢 Ponto Ativo</span>
+            </div>
+        </div>
+
+        <!-- RESUMO DE MÉTRICAS / DASHBOARD -->
+        <div class="grid-dados" style="margin-bottom: 35px;">
+            <div class="card-dado">
+                <h3 style="color: var(--verde-escuro); font-size: 1.6rem; margin-bottom: 5px;">12 📦</h3>
+                <p style="color: var(--texto-suave); font-size: 0.9rem;">Coletas Agendadas</p>
+            </div>
+            <div class="card-dado">
+                <h3 style="color: var(--verde-escuro); font-size: 1.6rem; margin-bottom: 5px;">145 kg ♻️</h3>
+                <p style="color: var(--texto-suave); font-size: 0.9rem;">Resíduos Recebidos</p>
+            </div>
+            <div class="card-dado">
+                <h3 style="color: var(--verde-escuro); font-size: 1.6rem; margin-bottom: 5px;">48 👥</h3>
+                <p style="color: var(--texto-suave); font-size: 0.9rem;">Cidadãos Atendidos</p>
+            </div>
+            <div class="card-dado">
+                <h3 style="color: var(--verde-escuro); font-size: 1.6rem; margin-bottom: 5px;">1.250 pts ⭐</h3>
+                <p style="color: var(--texto-suave); font-size: 0.9rem;">Pontos Gerados na Comunidade</p>
+            </div>
+        </div>
+
+        <section style="padding: 0; max-width: 100%; text-align: left;">
+            <h3 style="color: var(--verde-escuro); font-size: 1.4rem; margin-bottom: 20px; border-bottom: 2px solid var(--verde-primario); padding-bottom: 8px;">⚙️ Gerenciar Perfil e Informações do EcoPonto</h3>
+            
+            <form style="width: 100%;">
+                
+                <div class="secao-form">
+                    <legend>📋 Informações Gerais e Contato</legend>
+                    <div class="grupo-campo-duplo" style="margin-top: 15px;">
+                        <div class="grupo-campo">
+                            <label for="nome-exibido">Nome Exibido no Mapa:</label>
+                            <input type="text" id="nome-exibido" value="EcoPonto Santa Isabel - Viamão" required>
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="responsavel-tecnico">Responsável Técnico / Administrador:</label>
+                            <input type="text" id="responsavel-tecnico" value="João Silva Fraga" required>
+                        </div>
+                    </div>
+
+                    <div class="grupo-campo-duplo">
+                        <div class="grupo-campo">
+                            <label for="telefone-contato">Telefone / WhatsApp de Atendimento:</label>
+                            <input type="tel" id="telefone-contato" value="(51) 98765-4321" required>
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="email-ecoponto">E-mail Comercial / Institucional:</label>
+                            <input type="email" id="email-ecoponto" value="santaisabel@ecomap.org" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="secao-form">
+                    <legend>📍 Endereço e Localização</legend>
+                    <div class="grupo-campo-duplo" style="margin-top: 15px;">
+                        <div class="grupo-campo">
+                            <label for="cep-ecoponto">CEP:</label>
+                            <input type="text" id="cep-ecoponto" value="94480-000">
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="bairro-ecoponto">Bairro / Cidade:</label>
+                            <input type="text" id="bairro-ecoponto" value="Santa Isabel, Viamão - RS" required>
+                        </div>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="endereco-ecoponto">Endereço Completo (Rua e Número):</label>
+                        <input type="text" id="endereco-ecoponto" value="Av. Liberdade, 1230" required>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="ponto-referencia">Ponto de Referência / Instruções de Chegada:</label>
+                        <input type="text" id="ponto-referencia" value="Próximo à Praça Santa Isabel e em frente ao supermercado.">
+                    </div>
+                </div>
+
+                <div class="secao-form">
+                    <legend>🕒 Horário de Atendimento Presencial (Entrega No Local)</legend>
+                    <div class="grupo-campo-duplo" style="margin-top: 15px;">
+                        <div class="grupo-campo">
+                            <label for="horario-semana">Dias e Horários (Segunda a Sexta):</label>
+                            <input type="text" id="horario-semana" value="08:00 às 17:00">
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="horario-fimdesemana">Horário aos Sábados / Feriados:</label>
+                            <input type="text" id="horario-fimdesemana" value="08:00 às 12:00 (Sábados)">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="secao-form">
+                    <legend>♻️ Tipos de Resíduos Aceitos Nesta Unidade</legend>
+                    <p style="font-size: 0.88rem; color: var(--texto-suave); margin-top: 5px; margin-bottom: 12px;">Selecione os materiais que o seu EcoPonto está capacitado a receber no momento:</p>
+
+                    <div class="checkbox-cadastro-grid">
+                        <label><input type="checkbox" name="residuos_aceitos" checked> Eletrônicos e Eletrodomésticos (TVs, Computadores, Celulares)</label>
+                        <label><input type="checkbox" name="residuos_aceitos" checked> Óleo de Cozinha Usado (Em garrafas PET)</label>
+                        <label><input type="checkbox" name="residuos_aceitos" checked> Plástico, Papel, Papelão, Metal e Vidro (Recicláveis Secom)</label>
+                        <label><input type="checkbox" name="residuos_aceitos" checked> Pilhas e Baterias Portáteis</label>
+                        <label><input type="checkbox" name="residuos_aceitos"> Móveis e Resíduos Volumosos</label>
+                        <label><input type="checkbox" name="residuos_aceitos"> Restos de Poda e Jardinagem</label>
+                        <label><input type="checkbox" name="residuos_aceitos"> Lâmpadas Fluorescentes / LED</label>
+                    </div>
+                </div>
+
+                <div class="secao-form">
+                    <legend>📝 Recomendações para Entrega de Resíduos</legend>
+                    <div class="grupo-campo" style="margin-top: 15px;">
+                        <label for="instrucoes-descarte">Orientações aos Cidadãos:</label>
+                        <textarea id="instrucoes-descarte" rows="4" placeholder="Ex: Traga o óleo em garrafas PET fechadas. Materiais recicláveis devem estar limpos e secos.">Favor entregar o óleo de cozinha armazenado em garrafas PET limpas e vedadas. Eletrônicos devem estar completos. Não aceitamos lixo hospitalar ou orgânico urbano comum.</textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-cadastro" style="font-size: 1.05rem; padding: 14px; margin-top: 10px;">Salvar Alterações do Perfil</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <h4>Entre em contato comigo!</h4>
+        <p>luizafraga23@gmail.com - Desenvolvedora do site</p>
+        <p>&copy; 2026 Ecomap - Ecopontos (Viamão e Região Metropolitana) - Projeto Integrador Front-End.</p>
+    </footer>
+
+    <script src="../Controller/Ecoponto.js"></script>
+</body>
+
+</html>
+

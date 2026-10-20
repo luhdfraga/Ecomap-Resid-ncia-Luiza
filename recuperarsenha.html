@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha - Ecomap</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <a href="home.html" class="logo-container">
+            <div class="logo-icone">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+            </div>
+            <span class="logo-texto">Eco<span>map</span></span>
+        </a>
+
+        <nav>
+            <a href="home.html">Início</a>
+            <a href="mapaecopontos.html">Ache um EcoPonto</a>
+            <a href="agendarcoleta.html">Agendar Coleta</a>
+            <a href="cadastrarecopontos.html">Cadastrar EcoPonto</a>
+            <a href="loginecoponto.html" class="nav-parceiro">Área do EcoPonto</a>
+            <a href="login.html" class="nav-perfil">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icone-usuario">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <div class="texto-perfil">
+                    <span>Login Cidadão</span>
+                </div>
+            </a>
+        </nav>
+    </header>
+
+    <section id="autenticacao-container">
+        <div id="form-login-bloco">
+            <h2>Recuperar Senha</h2>
+            <p>Insira seu e-mail cadastrado no Ecomap. Enviaremos um link para você redefinir sua senha.</p>
+
+            <form style="width: 100%;">
+                <div class="grupo-campo">
+                    <label for="recuperar-email">E-mail cadastrado:</label>
+                    <input type="email" id="recuperar-email" placeholder="seuemail@exemplo.com">
+                </div>
+
+                <a href="novasenha.html" class="btn-comunidade" style="text-decoration: none; display: block; text-align: center;">Enviar Link de Recuperação</a>
+            </form>
+
+            <div style="margin-top: 20px;">
+                <p style="font-size: 0.85rem; color: #666;">Lembrou a sua senha? <a href="login.html" style="color: var(--verde-escuro); font-weight: bold;">Voltar para o Login</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h4>Entre em contato comigo!</h4>
+        <p>luizafraga23@gmail.com - Desenvolvedora do site</p>
+        <p>&copy; 2026 Ecomap - Ecopontos (Viamão e Região Metropolitana) - Front-End.</p>
+    </footer>
+
+    <script src="../Controller/recuperarsenha.js"></script>
+    
+</body>
+
+</html>
+
